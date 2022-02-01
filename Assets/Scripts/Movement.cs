@@ -8,14 +8,19 @@ public class Movement : MonoBehaviour
     private Rigidbody2D playerRigidbody2D;
     private Collider2D boxCollider2D;
     [Header("Jump Variables")]
-    [SerializeField] private float jumpVelocity = 100f;
+    [SerializeField] private float jumpVelocity = 13f;
     
 
     [Header("Movement Variables")]
     [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float midAirControl = 1.5f;
+    [SerializeField] private float midAirControl = 2.5f;
     [SerializeField] private float linearDrag = 5f;
     private float horizontalDirection;
+    public Animator animator;
+    private float jumpTimeCounter;
+    public float jumpTime;
+    private bool isJumping;
+    
 
     private void Awake()
     {
@@ -26,6 +31,27 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         horizontalDirection = GetInput().x;
+        
+        //TURN LEFT OR RIGHT
+        Vector3 characterScale = transform.localScale;
+
+        if (GetInput().x < 0)
+        {
+            characterScale.x = -5;
+        }
+
+        if (GetInput().x > 0)
+        {
+            characterScale.x = 5;
+        }
+
+        transform.localScale = characterScale;
+        
+        //Speed for animation
+        float moveDirection = 0;
+        if (Mathf.Abs(horizontalDirection) >= 0.0001f)
+            moveDirection =  0.9f;
+        animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         Jump();
     }
 
@@ -55,7 +81,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                playerRigidbody2D.velocity += new Vector2(horizontalDirection * midAirControl * Time.deltaTime * moveSpeed, 0f);
+                playerRigidbody2D.velocity += new Vector2(horizontalDirection * midAirControl* moveSpeed, 0f);
                 playerRigidbody2D.velocity = new Vector2(Mathf.Clamp(playerRigidbody2D.velocity.x, -moveSpeed, +moveSpeed), playerRigidbody2D.velocity.y);
             }
     }
@@ -64,8 +90,29 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
             playerRigidbody2D.velocity = Vector2.up * jumpVelocity;
         }
+        //Space control
+        if (Input.GetKey(KeyCode.Space) && isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                playerRigidbody2D.velocity = Vector2.up * jumpVelocity;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
+        }
+        
     }
 
     private void ApplyLinearDrag()

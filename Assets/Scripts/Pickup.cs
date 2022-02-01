@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
+    public Arrow arrow;
 
     private void Start()
     {
@@ -15,18 +16,17 @@ public class Pickup : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
-        {
-            for (int i = 0; i < inventory.slots.Length; i++)
+        {       
+            if (inventory.arrowSlot != 10)
             {
-                if (inventory.isFull[i] == false)
-                {
-                    //item can be added to the inventory
-                    inventory.isFull[i] = true;
-                    Instantiate(itemButton, inventory.slots[i].transform, false);
-                    Destroy(gameObject);
-                    break;
-                }
+                //item can be added to the inventory
+                inventory.arrowSlot++;
+                //Instantiate(itemButton, inventory.slots[i].transform, false);
+                Destroy(gameObject);  
+                    
+                    
             }
+            
         }
 
     }
