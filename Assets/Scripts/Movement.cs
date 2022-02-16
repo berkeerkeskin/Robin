@@ -20,7 +20,8 @@ public class Movement : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
-    
+    private bool isCrouching;
+
 
     private void Awake()
     {
@@ -46,6 +47,9 @@ public class Movement : MonoBehaviour
         }
 
         transform.localScale = characterScale;
+
+        animator.SetBool("IsCrouching", isCrouching);
+        Crouch();
         
         //Speed for animation
         float moveDirection = 0;
@@ -54,7 +58,7 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         Jump();
     }
-
+    
     private void FixedUpdate()
     {
         HandleMovement();
@@ -84,6 +88,19 @@ public class Movement : MonoBehaviour
                 playerRigidbody2D.velocity += new Vector2(horizontalDirection * midAirControl* moveSpeed, 0f);
                 playerRigidbody2D.velocity = new Vector2(Mathf.Clamp(playerRigidbody2D.velocity.x, -moveSpeed, +moveSpeed), playerRigidbody2D.velocity.y);
             }
+    }
+
+    private void Crouch()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            isCrouching = true;
+          
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            isCrouching = false;
+        }
     }
 
     private void Jump()
