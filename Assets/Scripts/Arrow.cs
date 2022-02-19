@@ -5,6 +5,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
 
+    private float[] attackDetails = new float[2];
     Rigidbody2D rb;
     bool hasHit;
     // Start is called before the first frame update
@@ -30,5 +31,13 @@ public class Arrow : MonoBehaviour
         hasHit = true;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
+
+        if (collision.collider.tag == "Enemy")
+        {
+            attackDetails[0] = 15.0f;
+            attackDetails[1] = transform.position.x;
+            
+            collision.collider.transform.parent.SendMessage("Damage", attackDetails);
+        }
     }
 }
