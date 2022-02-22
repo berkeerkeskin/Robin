@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
     private bool isCrouching;
+    private bool Shooting;
+    private bool Jumping; // For animation
 
 
     private void Awake()
@@ -51,11 +53,16 @@ public class Movement : MonoBehaviour
         animator.SetBool("IsCrouching", isCrouching);
         Crouch();
         
+        animator.SetBool("Shooting", Shooting);
+        ShootingAnim();
+        
         //Speed for animation
         float moveDirection = 0;
         if (Mathf.Abs(horizontalDirection) >= 0.0001f)
             moveDirection =  0.9f;
         animator.SetFloat("Speed", Mathf.Abs(moveDirection));
+        animator.SetBool("IsJumping", isJumping);
+        animator.SetBool("inAir", Jumping);
         Jump();
     }
     
@@ -102,12 +109,26 @@ public class Movement : MonoBehaviour
             isCrouching = false;
         }
     }
+    
+    private void ShootingAnim()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shooting = true;
+          
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            Shooting = false;
+        }
+    }
 
     private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             isJumping = true;
+            Jumping = true;
             jumpTimeCounter = jumpTime;
             playerRigidbody2D.velocity = Vector2.up * jumpVelocity;
         }
@@ -128,6 +149,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+            Jumping = false;
         }
         
     }
