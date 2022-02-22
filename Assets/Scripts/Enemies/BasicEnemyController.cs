@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class BasicEnemyController : MonoBehaviour
 {
@@ -25,7 +26,11 @@ public class BasicEnemyController : MonoBehaviour
         movementSpeed, 
         maxHealth,
         knockbackDuration;
-    
+
+    [SerializeField] private GameObject
+        hitParticle,
+        deathChunkParticle,
+        deathBloodParticle;
     private float 
         currentHealth,
         knockbackStartTime;
@@ -143,7 +148,7 @@ public class BasicEnemyController : MonoBehaviour
     private void Damage(float[] attackDetails)
     {
         currentHealth -= attackDetails[0];
-
+        Instantiate(hitParticle, alive.transform.position, Quaternion.Euler(0.0f, 0.0f, (float)new Random().NextDouble() * 360.0f));
         if (attackDetails[1] > alive.transform.position.x)
         {
             damageDirection = -1;

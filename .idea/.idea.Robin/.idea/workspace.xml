@@ -1,39 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42a73bd9-945e-4900-8453-6b39405d28b6" name="Changes" comment="missing docs added">
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Basic Enemy AC.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Basic Enemy AC.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Hurt.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Hurt.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Walk.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Walk.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Enemy Test Scene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Enemy Test Scene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/BasicEnemyController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/BasicEnemyController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Dusman1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Dusman1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Packages-Update.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Packages-Update.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    <list default="true" id="42a73bd9-945e-4900-8453-6b39405d28b6" name="Changes" comment="basic enemy implemented.">
+      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Hit_Particle_1.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Hit_Particle_1.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Particle AC.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Particle AC.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/enemy1_run.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/enemy1_run.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/idle (1)_1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/idle (1)_1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/robin2_0.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/robin2_0.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/robin_running.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/robin_running.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/run_anim_robin_0.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/run_anim_robin_0.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ParticleController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ParticleController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/enemy1_run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/enemy1_run.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Particles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Particles/Hit particle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Particles/Hit particle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/Enemy.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/Enemy.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/HitParticle.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefabs/HitParticle.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimationControllers/Basic Enemy AC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Basic Enemy AC.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Hurt.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Hurt.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Walk.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Walk.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Enemy Test Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Enemy Test Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/BasicEnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/BasicEnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Dusman1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Dusman1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/idle (1)_1.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/idle (1)_1.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/robin2_0.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/robin2_0.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/robin_running.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/robin_running.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/run_anim_robin_0.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/run_anim_robin_0.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +76,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -101,8 +121,24 @@
       <workItem from="1643796990654" duration="790000" />
       <workItem from="1645053783918" duration="399000" />
       <workItem from="1645131181065" duration="4600000" />
+      <workItem from="1645276702114" duration="430000" />
+      <workItem from="1645567989671" duration="712000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="basic enemy implemented.">
+      <created>1645276847556</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645276847556</updated>
+    </task>
+    <task id="LOCAL-00003" summary="basic enemy implemented.">
+      <created>1645276876280</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645276876280</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="missing docs added" />
-    <option name="LAST_COMMIT_MESSAGE" value="missing docs added" />
+    <MESSAGE value="basic enemy implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="basic enemy implemented." />
   </component>
 </project>
