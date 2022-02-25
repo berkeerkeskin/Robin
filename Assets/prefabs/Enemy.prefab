@@ -62,7 +62,7 @@ Transform:
   m_Children:
   - {fileID: 3382631965278309962}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3382631964914088814
 MonoBehaviour:
@@ -86,6 +86,9 @@ MonoBehaviour:
   movementSpeed: 3
   maxHealth: 30
   knockbackDuration: 0.1
+  hitParticle: {fileID: 4880856773071853303, guid: 91c31818269e34ba5afedff8ba6b604b, type: 3}
+  deathChunkParticle: {fileID: 0}
+  deathBloodParticle: {fileID: 0}
   knockbackSpeed: {x: 10, y: 5}
 --- !u!1 &3382631965278309961
 GameObject:
@@ -98,8 +101,8 @@ GameObject:
   - component: {fileID: 3382631965278309962}
   - component: {fileID: 3382631965278309963}
   - component: {fileID: 3382631965278309958}
-  - component: {fileID: 3382631965278309957}
   - component: {fileID: 3382631965278309956}
+  - component: {fileID: 5440984207342515546}
   m_Layer: 8
   m_Name: Alive
   m_TagString: Enemy
@@ -197,32 +200,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &3382631965278309957
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3382631965278309961}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.036575675, y: -0.15935612}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
-    newSize: {x: 12.48, y: 12.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.3361595, y: 6.9255095}
-  m_EdgeRadius: 0
 --- !u!95 &3382631965278309956
 Animator:
   serializedVersion: 4
@@ -243,6 +220,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &5440984207342515546
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382631965278309961}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.12892336, y: 0.3609866}
+  m_Size: {x: 2.0695, y: 6.9686117}
+  m_Direction: 0
 --- !u!1 &3382631966026113533
 GameObject:
   m_ObjectHideFlags: 0
