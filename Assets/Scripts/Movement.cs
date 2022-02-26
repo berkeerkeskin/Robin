@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float midAirControl = 2.5f;
     [SerializeField] private float linearDrag = 5f;
+    [SerializeField] private float groundCheckDistance;
     private float horizontalDirection;
     public Animator animator;
     private float jumpTimeCounter;
@@ -23,6 +25,9 @@ public class Movement : MonoBehaviour
     private bool isCrouching;
     private bool Shooting;
     private bool Jumping; // For animation
+    private bool groundDetected;
+
+    [SerializeField] private Transform groundCheck;
 
 
     private void Awake()
@@ -79,8 +84,8 @@ public class Movement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);
-        return raycastHit2d.collider != null;
+        groundDetected = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
+        return groundDetected;
     }
 
     private void HandleMovement()
@@ -164,6 +169,11 @@ public class Movement : MonoBehaviour
         {
             playerRigidbody2D.drag = 0f;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(groundCheck.position, new Vector2(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
     }
 }
 
