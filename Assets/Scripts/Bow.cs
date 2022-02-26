@@ -13,6 +13,7 @@ public class Bow : MonoBehaviour
     private float characterFaceDirection;
 
 
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -56,13 +57,16 @@ public class Bow : MonoBehaviour
 
     private void Shoot(float shootForce)
     {
-        //Debug.Log(inventory.arrowSlot);
         if (inventory.arrowSlot != 0)
         { 
             GameObject newArrow = Instantiate(arrow, shotPoint.position, shotPoint.rotation);
             newArrow.GetComponent<Rigidbody2D>().velocity = transform.right * shootForce;
+            
             inventory.arrowSlot--;
+
+          
         } 
+        
     }
 
     private float CalculateShootForce(float holdTime)

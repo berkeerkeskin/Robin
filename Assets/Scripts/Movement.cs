@@ -130,7 +130,7 @@ public class Movement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) ^ Input.GetKeyDown(KeyCode.W) && IsGrounded())
         {
             isJumping = true;
             Jumping = true;
@@ -138,7 +138,7 @@ public class Movement : MonoBehaviour
             playerRigidbody2D.velocity = Vector2.up * jumpVelocity;
         }
         //Space control
-        if (Input.GetKey(KeyCode.Space) && isJumping)
+        if (Input.GetKey(KeyCode.Space) ^ Input.GetKey(KeyCode.W) && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -151,7 +151,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) ^ Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false;
             Jumping = false;

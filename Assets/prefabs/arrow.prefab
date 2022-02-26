@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7867566342261077671}
   m_Layer: 6
   m_Name: arrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButton: {fileID: 1018331464651727920, guid: 6ea645480a3c64f0ea2a63e6774ae7f3, type: 3}
-  arrow: {fileID: 0}
+  arrow: {fileID: 7867566342261077671}
 --- !u!114 &7867566342261077671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d132013cdee4d4174b4d809a01c66837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrow: {fileID: 7867566342261077671}

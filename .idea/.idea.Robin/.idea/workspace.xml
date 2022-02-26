@@ -1,63 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42a73bd9-945e-4900-8453-6b39405d28b6" name="Changes" comment="basic enemy implemented.">
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Hit_Particle_1.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Hit_Particle_1.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Particle AC.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Particle AC.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/enemy1_run.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/enemy1_run.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/idle (1)_1.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/idle (1)_1.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/robin2_0.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/robin2_0.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/robin_running.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/robin_running.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/run_anim_robin_0.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/run_anim_robin_0.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ParticleController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ParticleController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/enemy1_run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/enemy1_run.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Particles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Particles/Hit particle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Particles/Hit particle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefabs/Enemy.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefabs/Enemy.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefabs/HitParticle.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefabs/HitParticle.prefab.meta" afterDir="false" />
+    <list default="true" id="f3076b9d-452f-44f2-be8a-efab0b7dd58e" name="Changes" comment="basic enemy implemented.">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/shelf/Uncommitted_changes_before_Update_at_2_02_2022_02_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/shelf/Uncommitted_changes_before_Update_at_2_02_2022_02_09__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnimationControllers/Basic Enemy AC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationControllers/Basic Enemy AC.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Hurt.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Hurt.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1_Walk.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Enemy Test Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Enemy Test Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/BasicEnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/BasicEnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Dusman1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Dusman1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/idle (1)_1.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/idle (1)_1.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/robin2_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/robin2_0.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/robin_running.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/robin_running.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/run_anim_robin_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/run_anim_robin_0.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/arrow.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="CaganUpdate1" />
+      </map>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.3/Runtime/Behaviours/CinemachineBrain.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -112,7 +83,7 @@
       <updated>1643757548556</updated>
     </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="42a73bd9-945e-4900-8453-6b39405d28b6" name="Changes" comment="missing docs added" />
+      <changelist id="f3076b9d-452f-44f2-be8a-efab0b7dd58e" name="Changes" comment="" />
       <created>1643760000971</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -123,6 +94,8 @@
       <workItem from="1645131181065" duration="4600000" />
       <workItem from="1645276702114" duration="430000" />
       <workItem from="1645567989671" duration="712000" />
+      <workItem from="1645906038902" duration="6917000" />
+      <workItem from="1645913647558" duration="880000" />
     </task>
     <task id="LOCAL-00002" summary="basic enemy implemented.">
       <created>1645276847556</created>
