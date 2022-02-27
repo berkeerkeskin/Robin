@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3076b9d-452f-44f2-be8a-efab0b7dd58e" name="Changes" comment="basic enemy implemented.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/shelf/Uncommitted_changes_before_Update_at_2_02_2022_02_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/shelf/Uncommitted_changes_before_Update_at_2_02_2022_02_09__Changes_.xml" afterDir="false" />
+    <list default="true" id="f3076b9d-452f-44f2-be8a-efab0b7dd58e" name="Changes" comment="Enemy Hit arrow removal.">
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Dashing.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Dashing.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimationControllers/idle (1)_1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationControllers/idle (1)_1.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/arrow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +90,8 @@
       <workItem from="1645276702114" duration="430000" />
       <workItem from="1645567989671" duration="712000" />
       <workItem from="1645906038902" duration="6917000" />
-      <workItem from="1645913647558" duration="880000" />
+      <workItem from="1645913647558" duration="1386000" />
+      <workItem from="1645979898080" duration="3670000" />
     </task>
     <task id="LOCAL-00002" summary="basic enemy implemented.">
       <created>1645276847556</created>
@@ -111,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645276876280</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Enemy Hit arrow removal.">
+      <created>1645914557190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645914557190</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +138,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="missing docs added" />
     <MESSAGE value="basic enemy implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="basic enemy implemented." />
+    <MESSAGE value="Enemy Hit arrow removal." />
+    <option name="LAST_COMMIT_MESSAGE" value="Enemy Hit arrow removal." />
   </component>
 </project>

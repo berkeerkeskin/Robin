@@ -324,7 +324,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.51784, y: 1}
+    m_SensorSize: {x: 3.591472, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4827,12 +4827,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   jumpVelocity: 13
+  dashVelocity: 5
   moveSpeed: 7
   midAirControl: 3
   linearDrag: 10
   groundCheckDistance: 0.5
   animator: {fileID: 430313416}
   jumpTime: 0.25
+  dashTime: 0.25
   groundCheck: {fileID: 1373676103}
 --- !u!50 &430313411
 Rigidbody2D:

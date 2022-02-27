@@ -11,9 +11,12 @@ public class Movement : MonoBehaviour
     [Header("Jump Variables")]
     [SerializeField] private float jumpVelocity = 13f;
     
+    [Header("Dash Variables")]
+    [SerializeField] private float dashVelocity = 5f;
+    
 
     [Header("Movement Variables")]
-    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float midAirControl = 2.5f;
     [SerializeField] private float linearDrag = 5f;
     [SerializeField] private float groundCheckDistance;
@@ -21,11 +24,14 @@ public class Movement : MonoBehaviour
     public Animator animator;
     private float jumpTimeCounter;
     public float jumpTime;
+    public float dashTime;
     private bool isJumping;
     private bool isCrouching;
     private bool Shooting;
     private bool Jumping; // For animation
     private bool groundDetected;
+    private bool isDashing;
+    private float dashTimeCounter;
 
     [SerializeField] private Transform groundCheck;
 
@@ -68,6 +74,8 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         animator.SetBool("IsJumping", isJumping);
         animator.SetBool("inAir", Jumping);
+        animator.SetBool("IsDashing", isDashing);
+        Dash();
         Jump();
     }
     
@@ -125,6 +133,36 @@ public class Movement : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             Shooting = false;
+        }
+    }
+
+    private void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+        {
+            isDashing = true;
+            dashTimeCounter = dashTime;
+            //moveSpeed += 2f;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && isDashing)
+        {
+            if (dashTimeCounter > 0)
+            {
+                moveSpeed = 10f;
+                dashTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                moveSpeed = 7f;
+                isDashing = false;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 7f;
+            isDashing = false;
         }
     }
 
