@@ -324,7 +324,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.591472, y: 1}
+    m_SensorSize: {x: 2.0997877, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4800,7 +4800,8 @@ GameObject:
   - component: {fileID: 430313414}
   - component: {fileID: 430313413}
   - component: {fileID: 430313411}
-  - component: {fileID: 430313410}
+  - component: {fileID: 430313419}
+  - component: {fileID: 430313418}
   - component: {fileID: 430313415}
   - component: {fileID: 430313416}
   - component: {fileID: 430313417}
@@ -4811,31 +4812,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &430313410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430313409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5f0f8c2673a4ffbb6fa44f7544ad6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  jumpVelocity: 13
-  dashVelocity: 5
-  moveSpeed: 7
-  midAirControl: 3
-  linearDrag: 10
-  groundCheckDistance: 0.5
-  animator: {fileID: 430313416}
-  jumpTime: 0.25
-  dashTime: 0.25
-  groundCheck: {fileID: 1373676103}
 --- !u!50 &430313411
 Rigidbody2D:
   serializedVersion: 4
@@ -4978,6 +4954,49 @@ CapsuleCollider2D:
   m_Offset: {x: -0.000000011920929, y: 0.00655365}
   m_Size: {x: 0.11397793, y: 0.29689273}
   m_Direction: 0
+--- !u!114 &430313418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430313409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5f0f8c2673a4ffbb6fa44f7544ad6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  jumpVelocity: 13
+  dashVelocity: 5
+  moveSpeed: 7
+  midAirControl: 2.5
+  linearDrag: 5
+  groundCheckDistance: 0.5
+  knockbackDuration: 0.2
+  animator: {fileID: 430313416}
+  jumpTime: 0.3
+  dashTime: 0.1
+  groundCheck: {fileID: 1373676103}
+  knockbackSpeed: {x: 10, y: 10}
+--- !u!114 &430313419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430313409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc23144193fd6496bb8a49d38f2e9591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  deathChunkParticle: {fileID: 0}
+  deathBloodParticle: {fileID: 0}
+  isDead: 0
 --- !u!1 &456954899
 GameObject:
   m_ObjectHideFlags: 0
@@ -5686,6 +5705,10 @@ PrefabInstance:
       propertyPath: hitParticle
       value: 
       objectReference: {fileID: 4880856773071853303, guid: 91c31818269e34ba5afedff8ba6b604b, type: 3}
+    - target: {fileID: 3382631964914088814, guid: a2670e687736042ac8142530e54e6e27, type: 3}
+      propertyPath: touchDamageWidth
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3382631964914088818, guid: a2670e687736042ac8142530e54e6e27, type: 3}
       propertyPath: m_Name
       value: Enemy

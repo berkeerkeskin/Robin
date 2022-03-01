@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
     private Rigidbody2D playerRigidbody2D;
@@ -16,24 +16,36 @@ public class Movement : MonoBehaviour
     
 
     [Header("Movement Variables")]
-    [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float midAirControl = 2.5f;
-    [SerializeField] private float linearDrag = 5f;
-    [SerializeField] private float groundCheckDistance;
+    [SerializeField] private float moveSpeed = 7f,
+     midAirControl = 2.5f,
+     linearDrag = 5f,
+     groundCheckDistance,
+     knockbackDuration;
+    
     private float horizontalDirection;
     public Animator animator;
-    private float jumpTimeCounter;
+    
     public float jumpTime;
     public float dashTime;
-    private bool isJumping;
-    private bool isCrouching;
-    private bool Shooting;
-    private bool Jumping; // For animation
-    private bool groundDetected;
-    private bool isDashing;
-    private float dashTimeCounter;
+    
+    private bool 
+        isJumping,
+        isCrouching,
+        Shooting, 
+        Jumping, // For animation
+        groundDetected,
+        isDashing,
+        knockback;
+    
+    private float 
+        dashTimeCounter,
+        jumpTimeCounter,
+        knockbackStartTime;
 
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private Vector2 knockbackSpeed;
+
+    private PlayerStats PS;
 
 
     private void Awake()
@@ -42,41 +54,50 @@ public class Movement : MonoBehaviour
         boxCollider2D = GetComponent<Collider2D>();
     }
 
+    private void Start()
+    {
+        PS = GetComponent<PlayerStats>();
+    }
+
     private void Update()
     {
-        horizontalDirection = GetInput().x;
-        
-        //TURN LEFT OR RIGHT
-        Vector3 characterScale = transform.localScale;
-
-        if (GetInput().x < 0)
+        if (!PS.isDead)
         {
-            characterScale.x = -5;
-        }
-
-        if (GetInput().x > 0)
-        {
-            characterScale.x = 5;
-        }
-
-        transform.localScale = characterScale;
-
-        animator.SetBool("IsCrouching", isCrouching);
-        Crouch();
+            horizontalDirection = GetInput().x;
         
-        animator.SetBool("Shooting", Shooting);
-        ShootingAnim();
+            //TURN LEFT OR RIGHT
+            Vector3 characterScale = transform.localScale;
+
+            if (GetInput().x < 0)
+            { characterScale.x = -5;
+            }
+
+            if (GetInput().x > 0)
+            { 
+                characterScale.x = 5;
+            }
+
+            transform.localScale = characterScale;
+
+            animator.SetBool("IsCrouching", isCrouching);
+            Crouch();
         
-        //Speed for animation
-        float moveDirection = 0;
-        if (Mathf.Abs(horizontalDirection) >= 0.0001f)
-            moveDirection =  0.9f;
-        animator.SetFloat("Speed", Mathf.Abs(moveDirection));
-        animator.SetBool("IsJumping", isJumping);
-        animator.SetBool("inAir", Jumping);
-        animator.SetBool("IsDashing", isDashing);
-        Dash();
-        Jump();
+            animator.SetBool("Shooting", Shooting);
+            ShootingAnim();
+        
+            //Speed for animation
+            float moveDirection = 0;
+            if (Mathf.Abs(horizontalDirection) >= 0.0001f)
+                moveDirection =  0.9f;
+            animator.SetFloat("Speed", Mathf.Abs(moveDirection));
+            animator.SetBool("IsJumping", isJumping);
+            animator.SetBool("inAir", Jumping);
+            animator.SetBool("IsDashing", isDashing);
+            Dash();
+            Jump();
+        
+            CheckKnockback();
+        }
     }
     
     private void FixedUpdate()
@@ -88,7 +109,7 @@ public class Movement : MonoBehaviour
     private Vector2 GetInput()
     {
         return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-    }
+    } 
 
     private bool IsGrounded()
     {
@@ -99,11 +120,11 @@ public class Movement : MonoBehaviour
     private void HandleMovement()
     {
         
-            if (IsGrounded())
+            if (IsGrounded() && !knockback)
             {
                 playerRigidbody2D.velocity = new Vector2(horizontalDirection * moveSpeed, playerRigidbody2D.velocity.y);
             }
-            else
+            else if(!knockback)
             {
                 playerRigidbody2D.velocity += new Vector2(horizontalDirection * midAirControl* moveSpeed, 0f);
                 playerRigidbody2D.velocity = new Vector2(Mathf.Clamp(playerRigidbody2D.velocity.x, -moveSpeed, +moveSpeed), playerRigidbody2D.velocity.y);
@@ -165,7 +186,6 @@ public class Movement : MonoBehaviour
             isDashing = false;
         }
     }
-
     private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) ^ Input.GetKeyDown(KeyCode.W) && IsGrounded())
@@ -209,6 +229,43 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void Knockback(int direction)
+    {
+        knockback = true;
+        knockbackStartTime = Time.time;
+        playerRigidbody2D.velocity = new Vector2(knockbackSpeed.x * direction, knockbackSpeed.y);
+    }
+
+    private void CheckKnockback()
+    {
+        if (Time.time >= knockbackStartTime + knockbackDuration && knockback)
+        {
+            knockback = false;
+            playerRigidbody2D.velocity = new Vector2(0.0f, playerRigidbody2D.velocity.y);
+        }
+    }
+
+    private void Damage(float[] attackDetails)
+    {
+        if (!isDashing && !PS.isDead)
+        {
+            int direction;
+        
+            //Damage player here using attackDetails[0]
+            PS.DecreaseHealth(attackDetails[0]);
+        
+            if (attackDetails[1] < transform.position.x)
+            {
+                direction = 1;
+            }
+            else
+            {
+                direction = -1;
+            }
+        
+            Knockback(direction);
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position, new Vector2(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1257203949875642840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4201553864501082847}
+  m_Layer: 8
+  m_Name: TouchDamageCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4201553864501082847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257203949875642840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3382631965278309962}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3382631964368552462
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,14 +109,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 3382631966026113534}
   wallCheck: {fileID: 3382631964368552463}
+  touchDamageCheck: {fileID: 4201553864501082847}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
   groundCheckDistance: 0.5
   wallCheckDistance: 0.2
   movementSpeed: 3
   maxHealth: 30
   knockbackDuration: 0.1
+  lastTouchDamageTime: 0
+  touchDamageCooldown: 0.2
+  touchDamage: 10
+  touchDamageWidth: 0.6
+  touchDamageHeight: 1
   hitParticle: {fileID: 4880856773071853303, guid: 91c31818269e34ba5afedff8ba6b604b, type: 3}
   deathChunkParticle: {fileID: 0}
   deathBloodParticle: {fileID: 0}
@@ -124,6 +164,7 @@ Transform:
   m_Children:
   - {fileID: 3382631966026113534}
   - {fileID: 3382631964368552463}
+  - {fileID: 4201553864501082847}
   m_Father: {fileID: 3382631964914088813}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Bow
+  - Arrow
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,7 @@ TagManager:
   - Player
   - Damagable
   - Minimap
-  - 
-  - 
-  - 
+  - Dead
   - 
   - 
   - 
