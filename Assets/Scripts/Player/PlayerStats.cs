@@ -36,7 +36,7 @@ public class PlayerStats : MonoBehaviour
         {
             isDead = true;
             //Physics2D.IgnoreLayerCollision(7, 8);
-            gameObject.layer = 10;
+            //gameObject.layer = 10;
             Die();
         }
     }
