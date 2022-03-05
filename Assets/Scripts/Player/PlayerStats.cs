@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,27 +14,33 @@ public class PlayerStats : MonoBehaviour
         deathBloodParticle;
 
     public bool isDead;
+   
     private float currentHealth;
 
+
     private Animator animator;
+    
     private void Start()
     {
         currentHealth = maxHealth;
         animator = gameObject.GetComponent<Animator>();
         isDead = false;
+       
     }
 
     private void Update()
     {
-        animator.SetBool("IsDead", isDead);
+     
     }
 
     public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
+        animator.SetTrigger("Damage");
 
         if (currentHealth <= 0.0f)
         {
+            animator.SetTrigger("Die");
             isDead = true;
             //Physics2D.IgnoreLayerCollision(7, 8);
             //gameObject.layer = 10;
@@ -43,8 +50,11 @@ public class PlayerStats : MonoBehaviour
 
     private void Die()
     {
+
+       
         //Instantiate(deathChunkParticle, transform.position, deathChunkParticle.transform.rotation);
         //Instantiate(deathBloodParticle, transform.position, deathBloodParticle.transform.rotation);
-        Destroy(gameObject, 4.0f);  
+        gameObject.layer = LayerMask.NameToLayer("Dead"); //untouchable
+        Destroy(gameObject, 5.0f);  
     }
 }
