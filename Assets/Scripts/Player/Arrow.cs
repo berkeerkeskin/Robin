@@ -39,6 +39,12 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.tag == "Rope")
+        {
+            Destroy(collision.collider.gameObject);
+            inventory.arrowSlot++;
+            Destroy(gameObject);
+        }
         if (collision.collider.tag == "Enemy" && !isMiss)
         {
             attackDetails[1] = transform.position.x;
@@ -54,6 +60,6 @@ public class Arrow : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         isMiss = true;
-
+  
     }
 }
