@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3076b9d-452f-44f2-be8a-efab0b7dd58e" name="Changes" comment="Death fix.">
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Rope.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Rope.png.meta" afterDir="false" />
+    <list default="true" id="f3076b9d-452f-44f2-be8a-efab0b7dd58e" name="Changes" comment="Rope and Plain added.">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Door.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Door.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Door.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Door.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Door.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/DoorIdle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/DoorIdle.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimationControllers/idle (1)_1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationControllers/idle (1)_1.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Arrow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +98,8 @@
       <workItem from="1645906038902" duration="6917000" />
       <workItem from="1645913647558" duration="1386000" />
       <workItem from="1645979898080" duration="3670000" />
-      <workItem from="1646605905269" duration="2760000" />
+      <workItem from="1646605905269" duration="3371000" />
+      <workItem from="1647039576073" duration="3467000" />
     </task>
     <task id="LOCAL-00002" summary="basic enemy implemented.">
       <created>1645276847556</created>
@@ -123,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646515171882</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Rope and Plain added.">
+      <created>1646609145251</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646609145251</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +162,7 @@
     <MESSAGE value="basic enemy implemented." />
     <MESSAGE value="Enemy Hit arrow removal." />
     <MESSAGE value="Death fix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Death fix." />
+    <MESSAGE value="Rope and Plain added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rope and Plain added." />
   </component>
 </project>
